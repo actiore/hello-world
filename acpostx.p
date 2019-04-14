@@ -21,6 +21,12 @@ FIND FIRST mfsc NO-LOCK
   WHERE mfsc.cusip = p_cusip
   NO-ERROR.
 
+IF NOT AVAIL mfsc
+THEN DO:
+  p_error = "invalid security".
+  RETURN.
+END.
+
 
 RETURN "".
 
