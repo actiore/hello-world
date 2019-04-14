@@ -6,6 +6,13 @@ DEF INPUT PARAM p_amt    AS DEC  NO-UNDO.
 DEF OUTPUT PARAM p_error AS CHAR NO-UNDO.
 
 
+
+FIND FIRST mfclac NO-LOCK
+  WHERE mfclac.acct = p_acct
+  NO-ERROR.
+
+
+
 RETURN "".
 
 
