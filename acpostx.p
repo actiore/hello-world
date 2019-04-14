@@ -11,6 +11,12 @@ FIND FIRST mfclac NO-LOCK
   WHERE mfclac.acct = p_acct
   NO-ERROR.
 
+IF NOT AVAIL mfclac
+THEN DO:
+   p_error = "invalid account".
+   RETURN.
+END.
+
 FIND FIRST mfsc NO-LOCK
   WHERE mfsc.cusip = p_cusip
   NO-ERROR.
