@@ -11,6 +11,9 @@ FIND FIRST mfclac NO-LOCK
   WHERE mfclac.acct = p_acct
   NO-ERROR.
 
+FIND FIRST mfsc NO-LOCK
+  WHERE mfsc.cusip = p_cusip
+  NO-ERROR.
 
 
 RETURN "".
